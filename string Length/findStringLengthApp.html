@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+<style>
+
+    *{
+        box-sizing: border-box;
+        margin: 0 auto;
+        padding: 0;
+    }
+    /* body{
+        width: 30%;
+        background-color: rgb(206, 179, 231);
+    }*/
+    #calc{
+        margin-top:100px;
+        background-color: rgb(128, 156, 207);
+        width: 200px; 
+        border: 1px dotted black;
+        border-radius: 5%;
+    }
+    .heading{
+        font-size:22px;
+        text-align: center;
+        color: rgb(49, 24, 107);
+    }
+    label{
+        line-height: 30px;
+        margin-left: 10px;
+        /* margin-top: 10px; */
+    }
+    input[type="text"]{
+        padding: 2px;
+        margin-left: 10px;
+    }
+    input[type="button"]{
+        padding: 2px;
+        margin-left: 30px;
+        margin-bottom:10px;
+        background-color: rgb(32, 72, 99);
+        border: none;
+        border-radius: 5px ;
+        color: aliceblue;
+        font-weight: bold;
+        /* padding-left:8px ; */
+        width: 120px;
+    }
+    input[type="button"]:hover{
+        background-color:rgb(11, 37, 54);
+    }
+
+
+</style>
+</head>
+<body>
+  <div id="calc">
+    <h1 class="heading">String Length Finder</h1>
+    <label for="section1">Enter a Sentence:</label><br>
+    <input type="text" id="section1" placeholder="Write here"><br>
+    <!-- <label for="section2">Enter First No:</label><br> -->
+    <!-- <input type="number" id="section2" value="0"><br><br> -->
+    <br>
+    <input type="button" value="Count" onclick="countME()">
+    <br>
+    <input type="button" value="Clear" onclick="clearMe()">
+    <br>
+    <input type="text" id="section2" readonly placeholder="Result"><br><br>
+    
+
+  </div>
+
+    <script>
+        function countME(){
+            const userVal = document.getElementById("section1").value;
+            //use length function to find the length of sentence
+            var lengthOfSen = userVal.length;
+            // var useSplit = lengthOfSen.replace(' ','');
+            // alert(lengthOfSen);
+            document.getElementById("section2").value=lengthOfSen;
+        }
+
+        function clearMe(){
+            document.getElementById("section1").value="";
+            document.getElementById("section2").value="";
+        }
+    </script>
+</body>
+</html>
